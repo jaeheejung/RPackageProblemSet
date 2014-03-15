@@ -62,7 +62,7 @@ setGeneric("getCoefs",
        )
 
 #' @export
-setMethod("getCoefs","Regressions",
+setMethod("getCoefs",c("matrix","matrix"),
      function(x,y,...){
     x <- data.frame(x)
     
@@ -84,6 +84,8 @@ setMethod("getCoefs","Regressions",
 coef.matrix[i,seq(length(unlist(sapply(all.lm,coef)[i],use.names=FALSE)))]<- unlist(sapply(all.lm,coef)[i],use.names=FALSE)
 	}
 	
+	colnames(coef.matrix) <- c("Intercept",covariate.names)
+	
 	return(coef.matrix)
 	
 	} 
@@ -98,7 +100,7 @@ setGeneric("getR2s",
        )
 
 #' @export
-setMethod("getR2s","Regressions",
+setMethod("getR2s",c("matrix","matrix"),
      function(x,y,...){
     x <- data.frame(x)
     
@@ -130,7 +132,7 @@ setGeneric("getPvalues",
        )
 
 #' @export
-setMethod("getPvalues","Regressions",
+setMethod("getPvalues",c("matrix","matrix"),
      function(x,y,...){
     x <- data.frame(x)
     
@@ -151,6 +153,8 @@ setMethod("getPvalues","Regressions",
 	for(i in 1:nrow(pvalues.matrix)){
 pvalues.matrix[i,seq(length(unlist(sapply(all.lm,function(X){summary(X)$coefficients[,4]})[i],use.names=FALSE)))]<- unlist(sapply(all.lm,function(X){summary(X)$coefficients[,4]})[i],use.names=FALSE)
 	}
+	
+	colnames(pvalues.matrix) <- c("Intercept",covariate.names)
 	
 	return(pvalues.matrix)
 	

@@ -27,7 +27,7 @@ setGeneric(name="evalRegressions",
            )
 
 #' @export
-setMethod(f="evalRegressions",
+setMethod(f="evalRegressions",c("matrix","matrix"),
           definition=function(x, y, ...){
 return(new("subRegressions",x=x,y=y,coefficients=getCoefs(x,y),Rsquared=getR2s(x,y),pvalues=getPvalues(x,y)))
           }

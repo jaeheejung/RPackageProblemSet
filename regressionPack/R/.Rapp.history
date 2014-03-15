@@ -1,0 +1,269 @@
+names(b)
+names(b) <- "health"
+b
+unclass(b)
+b <- matrix(c(-1.82,2.49,0.08,1.04,1.61,0.48,0.78,-0.79,1.79,-0.29))
+b
+colname(b)
+colnames(b)
+colnames(b) <- "health"
+b
+covariate.names <- colnames(a)
+combinations <- unlist(lapply(1:ncol(a),function(x){combn(ncol(a),x,simplify=F)}),recursive=F)
+outcome.name <- colnames(b)
+outcome.name
+Cols
+formulas <- sapply(combinations,function(x){paste(outcome.name,paste(covariate.names[x],collapse="+"))})
+formulas
+formulas <- sapply(combinations,function(x){paste(c(outcome.name,"~"),paste(covariate.names[x],collapse="+"))})
+formuals
+formulas
+formulas <- sapply(combinations,function(x){paste(c(outcome.name,"~",covariate.names[x],collapse="+"))})
+formulas
+formulas <- sapply(combinations,function(x){paste(c(outcome.name,"~",covariate.names[x]),collapse="+")})
+formulas
+formulas <- sapply(combinations,function(x){paste(c(outcome.name"~",covariate.names[x]),collapse="+")})
+"outcome.name"
+formulas <- sapply(combinations,function(x){as.formula(paste(c(outcome.name"~",covariate.names[x]),collapse="+"))})
+formulas <- sapply(combinations,function(x){as.formula(paste(c(outcome.name,covariate.names[x]),collapse="+"))})
+formulas <- sapply(combinations,function(x){paste(c(outcome.name,covariate.names[x]),collapse="+")})
+formulas
+?paste
+paste(outcome.name,"~")
+paste(outcome.name,"~",sep="")
+formulas <- sapply(combinations,function(x){paste(paste(outcome.name,"~",sep=""),covariate.names[x],collapse="+")})
+formuals
+formulas
+?cat
+formulas <- sapply(combinations,function(x){cat(paste(outcome.name,"~",sep=""),covariate.names[x],sep="+")})
+formulas <- sapply(combinations,function(x){paste(cat(outcome.name,"~",sep=""),covariate.names[x],collapse="+")})
+cat(outcome.name,"~",sep="")
+as.character(cat(outcome.name,"~",sep=""))
+paste(outcome.name,"~",sep="")
+formulas <- sapply(combinations,function(x){paste(paste(outcome.name,"~",sep=""),covariate.names[x],sep="+")})
+formulas
+formulas <- sapply(combinations,function(x){paste(paste(outcome.name,"~",sep=""),covariate.names[x],collapse="+")})
+formulas
+formulas <- sapply(combinations,function(x){paste(paste(outcome.name,"~",sep=""),paste(covariate.names[x],collapse="+"))})
+formulas
+formulas <- sapply(combinations,function(x){paste(paste(outcome.name,"~"),paste(covariate.names[x],collapse="+"))})
+formulas
+a
+class(a)
+as.data.frame(a)
+a
+data.frame(a)
+a
+formulas
+as.formula(formulas)
+lapply(formulas,function(x){lm(as.formula(x),data=data.frame(a))})
+a
+b
+data.frame(a,b)
+data.frame(b,a)
+lapply(formulas,function(x){lm(as.formula(x),data=data.frame(b,a))})
+all.lm <- lapply(formulas,function(x){lm(as.formula(x),data=data.frame(b,a))})
+all.lm
+?combn
+combinations
+covariate.names
+combinations[1]
+combinations[2]
+covariate.names[combinations[1]]
+a
+b
+class(b)
+colnames(b)
+colnames(data.frame(b))
+data.frame(b)
+a <- data.frame(a)
+a
+b <- data.frame(b)
+b
+cbind(b,a)
+data.frame(b,a)
+all.lm
+coef(all.lm)
+formulas
+sapply(all.lm,coef)
+lapply(all.lm,coef)
+library(plyr)
+all.lm
+laply(all.lm,coef)
+lapply(all.lm,coef)
+sapply(all.lm,coef)
+unlist(sapply(all.lm,coef))
+sapply(all.lm,coef)[1]
+sapply(all.lm,coef)[2]
+a
+b
+covariate.names <- colnames(a)
+outcome.name <- colnames(b)
+combinations <- unlist(lapply(1:ncol(a),function(X){combn(ncol(a),X,simplify=F)}),recursive=F)
+combinations
+combinations <- unlist(sapply(1:ncol(a),function(X){combn(ncol(a),X,simplify=F)}),recursive=F)
+combinations
+formulas <- sapply(combinations,function(X){paste(paste(outcome.name,"~"),paste(covariate.names[X],collapse="+"))})
+formulas
+all.lm <- sapply(formulas,function(X){lm(as.formula(X),data=cbind(y,x))})
+all.lm <- sapply(formulas,function(X){lm(as.formula(X),data=cbind(b,a))})
+all.lm
+all.lm <- lapply(formulas,function(X){lm(as.formula(X),data=cbind(b,a))})
+all.lm
+empty <- matrix()
+empty
+all.lm
+length(all.lm)
+coef(all.lm[1])
+all.lm[1]
+all.lm
+sapply(all.lm.coef)
+sapply(all.lm,coef)
+sapply(all.lm,coef)[1]
+sapply(all.lm,coef)[2]
+empty <- matrix()
+for(i in 1:length(all.lm)){
+empty[i,]<- sapply(all.lm,coef)[i]
+}
+unlist(sapply(all.lm,coef)[2])
+empty <- matrix()#
+	for(i in 1:length(all.lm)){#
+		empty[i,]<- unlist(sapply(all.lm,coef)[i])#
+	}
+empty <- data.frame()
+empty
+empty <- data.frame()#
+	for(i in 1:length(all.lm)){#
+		empty[i,]<- unlist(sapply(all.lm,coef)[i])#
+	}
+sapply(all.lm,coef)[1]
+class(sapply(all.lm,coef)[1])
+class(unlist(sapply(all.lm,coef)[1]))
+unlist(sapply(all.lm,coef)[1])
+?unlist
+unlist(sapply(all.lm,coef)[1],use.names=FALSE)
+empty <- data.frame()#
+	for(i in 1:length(all.lm)){#
+		empty[i,]<- unlist(sapply(all.lm,coef)[i],use.names=FALSE)#
+	}
+empty <- data.frame()#
+	for(i in 1:length(all.lm)){#
+		empty[i,]<- unlist(sapply(all.lm,coef)[i],use.names=FALSE)#
+	}#
+	)
+empty
+?unlist
+unlist(sapply(all.lm,coef)[1],recursive=FALSE,use.names=FALSE)
+unlist(sapply(all.lm,coef)[1],recursive=T,use.names=FALSE)
+length(unlist(sapply(all.lm,coef)[1],recursive=T,use.names=FALSE))
+empty <- data.frame()
+for(i in 1:length(all.lm)){
+empty[i,]<- unlist(sapply(all.lm,coef)[i],use.names=FALSE)
+}
+empty
+combinations
+formulas
+all.lm
+sapply(all.lm,coef)
+unlist(sapply(all.lm,coef),use.names=FALSE)
+a
+ncols(a)
+ncol(a)
+ncol(a)+1
+empty <- data.frame(length(all.lm),ncol(a)+1)
+empty
+dim(empty)
+empty <- matrix(nrow=length(all.lm),ncol=ncol(a)+1)
+empty
+for(i in 1:length(all.lm)){#
+		empty[i,]<- unlist(sapply(all.lm,coef)[i],use.names=FALSE)#
+	}
+empty
+nrow(empty)
+empty[1,]
+empty <- matrix("NA",nrow=length(all.lm),ncol=ncol(a)+1)
+empty
+for(i in 1:nrow(empty)){#
+		empty[i,]<- unlist(sapply(all.lm,coef)[i],use.names=FALSE)#
+	}
+empty
+empty[7,]<-c(1,2)
+empty
+unlist(sapply(all.lm,coef)[7],use.names=FALSE)
+length(unlist(sapply(all.lm,coef)[7],use.names=FALSE))
+class(unlist(sapply(all.lm,coef)[7],use.names=FALSE))
+mode(unlist(sapply(all.lm,coef)[7],use.names=FALSE))
+empty[7,]<- unlist(sapply(all.lm,coef)[7],use.names=FALSE)
+empty
+all.lm
+sapply(all.lm,coef)
+unlist(sapply(all.lm,coef))
+unlist(sapply(all.lm,recursive=FALSE,coef))
+unlist(sapply(all.lm,recursive=T,coef))
+?do.call
+sapply(all.lm,coef,use.names=FALSE)
+sapply(all.lm,coef,USE.NAMES=FALSE)
+sapply(all.lm,coef)
+?UNLIST
+?unlist
+hey <- sapply(all.lm,coef)
+hey
+do.call(rbind,hey)
+?do.call
+do.call(rbind,sapply(all.lm,coef)
+do.call(rbind,sapply(all.lm,coef))
+empty
+empty[1,c(1,2)]
+empty[1,seq(2)]
+empty[1,seq(3)]
+empty <- matrix("NA",nrow=length(all.lm),ncol=ncol(a)+1)
+empty
+for(i in 1:nrow(empty)){#
+		empty[i,seq(length(unlist(sapply(all.lm,coef)[i],use.names=FALSE)))]<- unlist(sapply(all.lm,coef)[i],use.names=FALSE)#
+	}
+empty
+unlist(sapply(all.lm,coef)[i],use.names=FALSE)
+unlist(sapply(all.lm,coef),use.names=FALSE)
+sapply(all.lm,coef),use.names=FALSE
+sapply(all.lm,coef)
+empty
+covariate.name
+covariate.names
+outcome.name
+combinations
+formulas
+all.lm
+sapply(all.lm,coef)
+sapply(all.lm,summary)
+all.lm
+sapply(all.lm,function(X){summary(X)$r.squared})
+matrix(data=c(0.31,0.33,-2.81,1.35,-0.48,0.14,3.84,-0.7,-0.67,-0.74,-0.37,-3.99,1.46,-0.89,0.27,-0.96,-0.92,-2.42,0.63,-1.44,-1.22,-2.36,2.7,3.79,-2.12,-3.46,2.77,-0.76,0.77,-0.9),nrow=10,ncol=3)
+?matrix
+matrix(data=c(0.31,0.33,-2.81,1.35,-0.48,0.14,3.84,-0.7,-0.67,-0.74,-0.37,-3.99,1.46,-0.89,0.27,-0.96,-0.92,-2.42,0.63,-1.44,-1.22,-2.36,2.7,3.79,-2.12,-3.46,2.77,-0.76,0.77,-0.9),nrow=10,ncol=3,dim.names=c("h","i","j"))
+matrix(data=c(0.31,0.33,-2.81,1.35,-0.48,0.14,3.84,-0.7,-0.67,-0.74,-0.37,-3.99,1.46,-0.89,0.27,-0.96,-0.92,-2.42,0.63,-1.44,-1.22,-2.36,2.7,3.79,-2.12,-3.46,2.77,-0.76,0.77,-0.9),nrow=10,ncol=3,dim.names=list(NULL,c("h","i","j")))
+matrix(data=c(0.31,0.33,-2.81,1.35,-0.48,0.14,3.84,-0.7,-0.67,-0.74,-0.37,-3.99,1.46,-0.89,0.27,-0.96,-0.92,-2.42,0.63,-1.44,-1.22,-2.36,2.7,3.79,-2.12,-3.46,2.77,-0.76,0.77,-0.9),nrow=10,ncol=3,dimnames=list(NULL,c("h","i","j")))
+matrix(c(-1.82,2.49,0.08,1.04,1.61,0.48,0.78,-0.79,1.79,-0.29))
+matrix(c(-1.82,2.49,0.08,1.04,1.61,0.48,0.78,-0.79,1.79,-0.29),dimnames="D")
+matrix(c(-1.82,2.49,0.08,1.04,1.61,0.48,0.78,-0.79,1.79,-0.29),dimnames=list("D"))
+matrix(c(-1.82,2.49,0.08,1.04,1.61,0.48,0.78,-0.79,1.79,-0.29),dimnames=list(NULL,"D"))
+myX <- matrix(data=c(0.31,0.33,-2.81,1.35,-0.48,0.14,3.84,-0.7,-0.67,-0.74,-0.37,-3.99,1.46,-0.89,0.27,-0.96,-0.92,-2.42,0.63,-1.44,-1.22,-2.36,2.7,3.79,-2.12,-3.46,2.77,-0.76,0.77,-0.9),nrow=10,ncol=3,dimnames=list(NULL,c("A","B","C")))
+myX
+myY <- matrix(c(-1.82,2.49,0.08,1.04,1.61,0.48,0.78,-0.79,1.79,-0.29),dimnames=list(NULL,"D"))
+myY
+x <- myX
+x
+y <- myY
+y
+x <- data.frame(x)
+y <- data.frame(y)
+covariate.names <- colnames(x)
+outcome.name <- colnames(y)
+combinations <- unlist(lapply(1:ncol(x),function(X){combn(ncol(x),X,simplify=F)}),recursive=F)
+formulas <- sapply(combinations,function(X){paste(paste(outcome.name,"~"),paste(covariate.names[X],collapse="+"))})
+all.lm <- lapply(formulas,function(X){lm(as.formula(X),data=cbind(y,x))})
+sapply(all.lm,coef)
+all.lm
+sapply(all.lm,function(X){summary(X)})
+sapply(all.lm,function(X){summary(X)$coef})
+sapply(all.lm,function(X){summary(X)$coefficients})
+?setMethod

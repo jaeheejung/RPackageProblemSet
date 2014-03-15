@@ -26,7 +26,7 @@ setGeneric(name="allRegressions",
            )
 
 #' @export
-setMethod(f="allRegressions",
+setMethod(f="allRegressions",c("matrix","matrix"),
           definition=function(x,y,...){         
           	return(new("Regressions",x=x,y=y,coefficients=getCoefs(x,y),Rsquared=getR2s(x,y)))
           }
