@@ -1,12 +1,20 @@
 \docType{class}
 \name{Regressions-class}
 \alias{Regressions-class}
+\alias{getCoefs}
+\alias{getCoefs,Regressions-method}
+\alias{getR2s}
+\alias{getR2s,Regressions-method}
 \alias{getRegressions}
 \alias{getRegressions,Regressions-method}
 \alias{initialize,Regressions-method}
 \title{Regression analyses}
 \usage{
 getRegressions(object = "Regressions")
+
+getCoefs(x, y, ...)
+
+getR2s(x, y, ...)
 }
 \description{
 Object of class \code{regressionPack} are created by the
