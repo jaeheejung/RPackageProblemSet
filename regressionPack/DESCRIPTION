@@ -1,0 +1,12 @@
+Package: regressionPack
+Title: Playing with regressions
+Version: 0.1
+Author: Jae Hee Jung
+Maintainer: Jae Hee Jung <jaeheejung@wustl.edu>
+Description: Find coefficients and Rsquared values
+Depends:
+    R (>= 3.0.2),
+    methods
+License: GPL (>=2)
+Suggests:
+    devtools

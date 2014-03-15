@@ -1,0 +1,6 @@
+export(allRegressions)
+export(getRegressions)
+exportClasses(Regressions)
+exportMethods(allRegressions)
+exportMethods(getRegressions)
+exportMethods(initialize)
