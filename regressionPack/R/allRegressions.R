@@ -18,7 +18,7 @@
 #' myY <- matrix(c(-1.82,2.49,0.08,1.04,1.61,0.48,0.78,-0.79,1.79,-0.29),dimnames=list(NULL,"D"))
 #' allRegressions(myX,myY)
 #' @rdname allRegressions
-#' @aliases allRegressions,ANY-method
+#' @aliases allRegressions,Regressions-method
 #' @export
 setGeneric(name="allRegressions",
         def=function(x,y,...)

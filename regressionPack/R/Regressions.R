@@ -12,7 +12,7 @@
 #' }
 #'
 #' @author Jae Hee Jung: \email{jaeheejung@@wustl.edu}
-#' @aliases Regressions-class initialize,Regressions-method getRegressions,Regressions-method getCoefs,Regressions-method getR2s,Regressions-method 
+#' @aliases Regressions-class initialize,Regressions-method getRegressions,Regressions-method getCoefs,Regressions-method getR2s,Regressions-method getPvalues,Regressions-method 
 #' @rdname Regressions
 #' @export
 setClass(Class="Regressions",
@@ -78,9 +78,9 @@ setMethod("getCoefs","Regressions",
 	
 	all.lm <- lapply(formulas,function(X){lm(as.formula(X),data=cbind(y,x))})
 	
-	coef.matrix <- matrix("NA",nrow=length(all.lm),ncol=ncol(a)+1)
+	coef.matrix <- matrix("NA",nrow=length(all.lm),ncol=ncol(x)+1)
 	
-	for(i in 1:nrow(empty)){
+	for(i in 1:nrow(coef.matrix)){
 coef.matrix[i,seq(length(unlist(sapply(all.lm,coef)[i],use.names=FALSE)))]<- unlist(sapply(all.lm,coef)[i],use.names=FALSE)
 	}
 	
@@ -117,6 +117,42 @@ setMethod("getR2s","Regressions",
 	R2.vector <- sapply(all.lm,function(X){summary(X)$r.squared})
 	
 	return(R2.vector)
+	
+	}
+	)
+
+#' @rdname Regressions
+#' @export 
+setGeneric("getPvalues",
+     function(x,y,...)  {
+         standardGeneric("getPvalues")
+       }
+       )
+
+#' @export
+setMethod("getPvalues","Regressions",
+     function(x,y,...){
+    x <- data.frame(x)
+    
+    y <- data.frame(y)
+	
+	covariate.names <- colnames(x)
+	
+	outcome.name <- colnames(y)
+	
+	combinations <- unlist(lapply(1:ncol(x),function(X){combn(ncol(x),X,simplify=F)}),recursive=F)
+	
+	formulas <- sapply(combinations,function(X){paste(paste(outcome.name,"~"),paste(covariate.names[X],collapse="+"))})
+	
+	all.lm <- lapply(formulas,function(X){lm(as.formula(X),data=cbind(y,x))})
+	
+	pvalues.matrix <- matrix("NA",nrow=length(all.lm),ncol=ncol(x)+1)
+	
+	for(i in 1:nrow(pvalues.matrix)){
+pvalues.matrix[i,seq(length(unlist(sapply(all.lm,function(X){summary(X)$coefficients[,4]})[i],use.names=FALSE)))]<- unlist(sapply(all.lm,function(X){summary(X)$coefficients[,4]})[i],use.names=FALSE)
+	}
+	
+	return(pvalues.matrix)
 	
 	}
 	)

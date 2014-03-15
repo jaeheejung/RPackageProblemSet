@@ -10,3 +10,9 @@ Depends:
 License: GPL (>=2)
 Suggests:
     devtools
+Collate:
+    'Regressions.R'
+    'allRegressions.R'
+    'evalRegressions.R'
+    'regressionPack-package.r'
+    'subRegressions-class.R'
