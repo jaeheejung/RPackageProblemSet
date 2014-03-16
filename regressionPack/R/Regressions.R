@@ -161,21 +161,4 @@ pvalues.matrix[i,seq(length(unlist(sapply(all.lm,function(X){summary(X)$coeffici
 	}
 	)
 
-#' @rdname Regressions
-#' @export
-setMethod("print","Regressions",function(x,...){
-	for(i in 1:length(x@Rsquared)){
-		cat("For model",i,"Rsquared is",x@Rsquared[i],"\n")
-		cat("For model",i,"coefficients are",paste(x@coefficients[i,],collapse=","),"\n\n")
-	}
-})
 
-#' @export
-setMethod("show","Regressions",function(object){
-	print(object)
-})
-
-#' @export
-setMethod("plot","Regressions",function(x,...){
-plot(1:length(x@Rsquared),x@Rsquared,main="Rsquared value of each model",xlab="model",ylab="Rsquared")
-})

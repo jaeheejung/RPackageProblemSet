@@ -12,7 +12,6 @@
 \alias{getRegressions,subRegressions-method}
 \alias{initialize,Regressions-method}
 \alias{initialize,subRegressions-method}
-\alias{print,Regressions-method}
 \alias{subRegressions-class}
 \title{Regression analyses}
 \usage{
@@ -23,14 +22,6 @@ getCoefs(x, y, ...)
 getR2s(x, y, ...)
 
 getPvalues(x, y, ...)
-
-\S4method{print}{Regressions}(x, ...)
-}
-\arguments{
-  \item{x}{an object used to select a method.}
-
-  \item{...}{further arguments passed to or from other
-  methods.}
 }
 \description{
 Object of class \code{regressionPack} are created by the

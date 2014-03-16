@@ -14,5 +14,6 @@ Collate:
     'Regressions.R'
     'allRegressions.R'
     'evalRegressions.R'
+    'exampleDataset.R'
     'regressionPack-package.r'
     'subRegressions-class.R'
