@@ -5,7 +5,7 @@
 #' Object of class \code{subRegressions} as created by the \code{evalRegressions} functions
 #'
 #' 
-#' An object of the class `Regressions' has the following slots:
+#' An object of the class `subRegressions' has the following slots:
 #' \itemize{
 #' \item \code{x} A matrix of possible covariates
 #' \item \code{y} A dependent variable
@@ -51,7 +51,8 @@ setMethod("getRegressions", "subRegressions",
             return(out)
                  }
             )
-          
+
+##This function allows an object of class Regressions to be coerced to an object of subRegressions. Since the last slot called pvalues is missing in objects of class Regressions, the slot pvalues will be NA once the object is coerced into the subclass subRegressions.          
 setAs(from="Regressions", to="subRegressions", 
       def=function(from){
         new("subRegressions",

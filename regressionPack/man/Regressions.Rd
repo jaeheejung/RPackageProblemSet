@@ -24,15 +24,15 @@ getR2s(x, y, ...)
 getPvalues(x, y, ...)
 }
 \description{
-Object of class \code{regressionPack} are created by the
+Object of class \code{Regressions} is created by the
 \code{allRegressions} function
 }
 \details{
-An object of the class `regressionPack' has the following
+An object of the class `Regressions' has the following
 slots: \itemize{ \item \code{x} A matrix of possible
-covariates \item \code{y} A dependent variable \item
-\code{coefficients} A matrix of coefficients \item
-\code{Rsquared} A vector of Rsquared values }
+covariates \item \code{y} A dependent variable in matrix
+form \item \code{coefficients} A matrix of coefficients
+\item \code{Rsquared} A vector of Rsquared values }
 }
 \author{
 Jae Hee Jung: \email{jaeheejung@wustl.edu}
